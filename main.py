@@ -10,6 +10,9 @@ st.set_page_config(
     layout="centered",
 )
 
+st.markdown("""    
+<style>
+  
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
 
 html, body, [class*="css"] {
@@ -185,7 +188,7 @@ hr {
     text-align: center;
     color: #8d6b76;
     padding: 1rem;
-}
+}""")
 
 
 # ── 헬퍼 함수 ──────────────────────────────────
