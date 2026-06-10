@@ -10,222 +10,182 @@ st.set_page_config(
     layout="centered",
 )
 
-st.markdown("""
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;900&family=IBM+Plex+Mono:wght@400;600&family=Noto+Sans+KR:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
 
 html, body, [class*="css"] {
     font-family: 'Noto Sans KR', sans-serif;
 }
 
-/* ── 전체 배경 ── */
+/* 벚꽃 배경 */
 .stApp {
-    background: linear-gradient(135deg, #0a0015 0%, #0d001f 30%, #050010 60%, #0a0a1a 100%) !important;
-    background-attachment: fixed !important;
+    background:
+        linear-gradient(
+            rgba(255,245,248,0.70),
+            rgba(255,248,250,0.75)
+        ),
+        url("https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=1920&q=80");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
-/* ── 메인 컨테이너 ── */
+/* 메인 영역 */
 .main .block-container {
-    max-width: 780px;
+    max-width: 820px;
     padding-top: 2rem;
 }
 
-/* ── 헤더 ── */
+/* 제목 */
 .calc-title {
-    font-family: 'Orbitron', monospace;
-    font-size: 2.4rem;
-    font-weight: 900;
-    background: linear-gradient(90deg, #ff2d9b, #bf5cff, #00e5ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    letter-spacing: 2px;
-    padding: 1.5rem 0 0.2rem;
-    filter: drop-shadow(0 0 18px #bf5cff66);
+    text-align: center;
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: #c75d7c;
+    margin-bottom: 0.2rem;
+    text-shadow: 0 2px 12px rgba(255,255,255,0.6);
 }
+
 .calc-subtitle {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.78rem;
-    color: #9966cc99;
+    text-align: center;
+    color: #8d6b76;
     margin-bottom: 2rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-}
-
-/* ── 결과 디스플레이 ── */
-.result-display {
-    background: rgba(0,0,0,0.7);
-    border: 1px solid rgba(0, 229, 255, 0.35);
-    border-radius: 12px;
-    padding: 1.4rem 1.8rem;
-    margin: 1rem 0;
-    font-family: 'IBM Plex Mono', monospace;
-    box-shadow: 0 0 24px rgba(0, 229, 255, 0.12), inset 0 0 30px rgba(0, 229, 255, 0.03);
-    position: relative;
-    overflow: hidden;
-}
-.result-display::after {
-    content: '';
-    position: absolute;
-    top: 0; left: -100%;
-    width: 60%; height: 1px;
-    background: linear-gradient(90deg, transparent, #00e5ff, transparent);
-    animation: scanline 3s linear infinite;
-}
-@keyframes scanline {
-    0%   { left: -100%; }
-    100% { left: 200%;  }
-}
-.result-expr {
-    color: #9966cc;
-    font-size: 0.78rem;
-    margin-bottom: 0.4rem;
-    letter-spacing: 1px;
-}
-.result-value {
-    color: #00e5ff;
-    font-size: 2.4rem;
-    font-weight: 600;
-    word-break: break-all;
-    text-shadow: 0 0 20px #00e5ffaa, 0 0 40px #00e5ff44;
-}
-
-/* ── 오류 박스 ── */
-.error-display {
-    background: rgba(255, 45, 100, 0.08);
-    border: 1px solid rgba(255, 45, 100, 0.4);
-    border-radius: 8px;
-    padding: 0.8rem 1.2rem;
-    color: #ff6b9d;
     font-size: 0.9rem;
-    margin: 0.8rem 0;
-    font-family: 'IBM Plex Mono', monospace;
-    box-shadow: 0 0 16px rgba(255, 45, 100, 0.1);
 }
 
-/* ── 도움말 박스 ── */
+/* 유리 카드 */
+.result-display,
+.help-box,
+.error-display {
+    backdrop-filter: blur(16px);
+    background: rgba(255,255,255,0.55);
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,0.35);
+    box-shadow:
+        0 8px 30px rgba(0,0,0,0.08);
+}
+
+/* 결과 */
+.result-display {
+    padding: 1.4rem;
+    margin: 1rem 0;
+}
+
+.result-expr {
+    color: #8d6b76;
+    font-size: 0.85rem;
+}
+
+.result-value {
+    color: #c75d7c;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+/* 도움말 */
 .help-box {
-    background: rgba(191, 92, 255, 0.06);
-    border-left: 2px solid #bf5cff;
-    border-radius: 0 8px 8px 0;
-    padding: 0.8rem 1.2rem;
-    color: #ccaaff;
-    font-size: 0.82rem;
-    margin: 0.5rem 0 1.2rem;
-    font-family: 'IBM Plex Mono', monospace;
-    line-height: 1.8;
+    padding: 1rem;
+    color: #6f5a62;
+    margin-bottom: 1rem;
 }
 
-/* ── 탭 ── */
+/* 오류 */
+.error-display {
+    background: rgba(255,230,235,0.7);
+    color: #d94c6f;
+    padding: 1rem;
+}
+
+/* 탭 */
 .stTabs [data-baseweb="tab-list"] {
-    background: rgba(255,255,255,0.03) !important;
-    border: 1px solid rgba(191, 92, 255, 0.25) !important;
-    border-radius: 10px !important;
-    padding: 4px !important;
-    gap: 2px !important;
+    background: rgba(255,255,255,0.45);
+    border-radius: 15px;
+    padding: 6px;
 }
+
 .stTabs [data-baseweb="tab"] {
-    border-radius: 7px !important;
-    font-size: 0.82rem !important;
-    font-weight: 600 !important;
-    color: #9966cc !important;
-    padding: 0.45rem 1rem !important;
-    font-family: 'IBM Plex Mono', monospace !important;
+    color: #7f6a72 !important;
+    border-radius: 10px !important;
 }
+
 .stTabs [aria-selected="true"] {
-    background: linear-gradient(135deg, #7b00d4, #c500a0) !important;
-    color: #fff !important;
-    box-shadow: 0 0 14px rgba(191, 92, 255, 0.5) !important;
+    background: linear-gradient(
+        135deg,
+        #ffb7c9,
+        #f7a8c2
+    ) !important;
+
+    color: white !important;
 }
 
-/* ── 버튼 ── */
+/* 버튼 */
 div.stButton > button {
-    width: 100%;
-    background: linear-gradient(135deg, #7b00d4, #c500a0) !important;
-    color: #fff !important;
+    background: linear-gradient(
+        135deg,
+        #ffb7c9,
+        #f7a8c2
+    ) !important;
+
+    color: white !important;
     border: none !important;
-    border-radius: 8px !important;
-    font-family: 'Orbitron', monospace !important;
+    border-radius: 12px !important;
+    padding: 0.7rem !important;
     font-weight: 600 !important;
-    font-size: 0.85rem !important;
-    letter-spacing: 1.5px !important;
-    padding: 0.65rem 0 !important;
-    margin-top: 0.7rem !important;
-    box-shadow: 0 4px 20px rgba(197, 0, 160, 0.4) !important;
-    transition: all 0.2s !important;
-}
-div.stButton > button:hover {
-    box-shadow: 0 6px 28px rgba(197, 0, 160, 0.6) !important;
-    transform: translateY(-1px) !important;
+
+    box-shadow:
+        0 6px 20px rgba(247,168,194,0.35);
 }
 
-/* ── 인풋 ── */
+div.stButton > button:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 8px 24px rgba(247,168,194,0.45);
+}
+
+/* 입력창 */
 .stNumberInput input,
 .stTextInput input {
-    background: rgba(10, 0, 25, 0.8) !important;
-    border: 1px solid rgba(191, 92, 255, 0.35) !important;
-    color: #e0c8ff !important;
-    border-radius: 8px !important;
-    font-family: 'IBM Plex Mono', monospace !important;
-}
-.stNumberInput input:focus,
-.stTextInput input:focus {
-    border-color: #bf5cff !important;
-    box-shadow: 0 0 0 2px rgba(191, 92, 255, 0.2) !important;
+    background: rgba(255,255,255,0.75) !important;
+    color: #555 !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(230,180,195,0.5) !important;
 }
 
-/* ── selectbox ── */
+/* 셀렉트 */
 .stSelectbox > div > div {
-    background: rgba(10, 0, 25, 0.8) !important;
-    border: 1px solid rgba(191, 92, 255, 0.35) !important;
-    color: #e0c8ff !important;
-    border-radius: 8px !important;
+    background: rgba(255,255,255,0.75) !important;
+    border-radius: 12px !important;
 }
 
-/* ── multiselect ── */
+/* 멀티셀렉트 */
 .stMultiSelect > div > div {
-    background: rgba(10, 0, 25, 0.8) !important;
-    border: 1px solid rgba(191, 92, 255, 0.35) !important;
-    border-radius: 8px !important;
+    background: rgba(255,255,255,0.75) !important;
+    border-radius: 12px !important;
 }
 
-/* ── 라벨 텍스트 ── */
-label, .stRadio label p, .stCheckbox label p {
-    color: #ccaaff !important;
-    font-family: 'IBM Plex Mono', monospace !important;
-    font-size: 0.82rem !important;
+/* 라벨 */
+label {
+    color: #6f5a62 !important;
 }
 
-/* ── 구분선 ── */
-hr {
-    border: none !important;
-    height: 1px !important;
-    background: linear-gradient(90deg, transparent, #bf5cff44, transparent) !important;
-    margin: 1.5rem 0 !important;
-}
-
-/* ── h4 섹션 제목 ── */
+/* 제목 */
 h4 {
-    font-family: 'Orbitron', monospace !important;
-    color: #bf5cff !important;
-    font-size: 0.88rem !important;
-    letter-spacing: 2px !important;
-    text-transform: uppercase !important;
-    margin-bottom: 1rem !important;
-    text-shadow: 0 0 10px #bf5cff55 !important;
+    color: #c75d7c !important;
+    font-weight: 700 !important;
 }
 
-/* ── 푸터 ── */
+/* 구분선 */
+hr {
+    border: none;
+    height: 1px;
+    background: rgba(199,93,124,0.2);
+}
+
+/* 푸터 */
 .footer {
     text-align: center;
-    color: #66336688;
-    font-size: 0.75rem;
-    font-family: 'IBM Plex Mono', monospace;
-    letter-spacing: 2px;
-    padding: 1rem 0 2rem;
+    color: #8d6b76;
+    padding: 1rem;
 }
-</style>
-""", unsafe_allow_html=True)
 
 
 # ── 헬퍼 함수 ──────────────────────────────────
