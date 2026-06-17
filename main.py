@@ -19,15 +19,15 @@ html, body, [class*="css"] {
     font-family: 'Noto Sans KR', sans-serif;
 }
 
-/* 자연 숲 배경 */
+/* 원희 배경 - 선명하게 */
 .stApp {
     background:
         linear-gradient(
             135deg,
-            rgba(245,250,245,0.85),
-            rgba(235,245,240,0.85)
+            rgba(255,240,245,0.75),
+            rgba(245,235,250,0.75)
         ),
-        url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1920&q=80");
+        url("https://images.unsplash.com/photo-1534314784935-39a75ab50e8d?auto=format&fit=crop&w=1920&q=95");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -44,14 +44,14 @@ html, body, [class*="css"] {
     text-align: center;
     font-size: 2.6rem;
     font-weight: 700;
-    color: #2d5016;
+    color: #d4548c;
     margin-bottom: 0.2rem;
     text-shadow: 0 2px 12px rgba(255,255,255,0.7);
 }
 
 .calc-subtitle {
     text-align: center;
-    color: #4a6741;
+    color: #b0566f;
     margin-bottom: 2rem;
     font-size: 0.9rem;
 }
@@ -60,12 +60,12 @@ html, body, [class*="css"] {
 .result-display,
 .help-box,
 .error-display {
-    backdrop-filter: blur(12px);
-    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(8px);
+    background: rgba(255,255,255,0.85);
     border-radius: 16px;
-    border: 1px solid rgba(255,255,255,0.6);
+    border: 1px solid rgba(255,255,255,0.7);
     box-shadow:
-        0 8px 32px rgba(45,80,22,0.1);
+        0 8px 32px rgba(212,84,140,0.1);
 }
 
 /* 결과 */
@@ -75,12 +75,12 @@ html, body, [class*="css"] {
 }
 
 .result-expr {
-    color: #4a6741;
+    color: #b0566f;
     font-size: 0.85rem;
 }
 
 .result-value {
-    color: #2d5016;
+    color: #d4548c;
     font-size: 2.2rem;
     font-weight: 700;
 }
@@ -88,34 +88,34 @@ html, body, [class*="css"] {
 /* 도움말 */
 .help-box {
     padding: 1rem;
-    color: #3d5a30;
+    color: #8b4a60;
     margin-bottom: 1rem;
 }
 
 /* 오류 */
 .error-display {
-    background: rgba(255,235,238,0.85);
-    color: #c83c3c;
+    background: rgba(255,235,245,0.9);
+    color: #d94c6f;
     padding: 1rem;
 }
 
 /* 탭 */
 .stTabs [data-baseweb="tab-list"] {
-    background: rgba(255,255,255,0.60);
+    background: rgba(255,255,255,0.70);
     border-radius: 15px;
     padding: 6px;
 }
 
 .stTabs [data-baseweb="tab"] {
-    color: #4a6741 !important;
+    color: #b0566f !important;
     border-radius: 10px !important;
 }
 
 .stTabs [aria-selected="true"] {
     background: linear-gradient(
         135deg,
-        #5ab359,
-        #4a9d50
+        #d4548c,
+        #c8428a
     ) !important;
 
     color: white !important;
@@ -125,8 +125,8 @@ html, body, [class*="css"] {
 div.stButton > button {
     background: linear-gradient(
         135deg,
-        #5ab359,
-        #4a9d50
+        #d4548c,
+        #c8428a
     ) !important;
 
     color: white !important;
@@ -136,44 +136,44 @@ div.stButton > button {
     font-weight: 600 !important;
 
     box-shadow:
-        0 6px 20px rgba(90,179,89,0.3);
+        0 6px 20px rgba(212,84,140,0.3);
 }
 
 div.stButton > button:hover {
     transform: translateY(-2px);
     box-shadow:
-        0 8px 24px rgba(90,179,89,0.4);
+        0 8px 24px rgba(212,84,140,0.4);
 }
 
 /* 입력창 */
 .stNumberInput input,
 .stTextInput input {
-    background: rgba(255,255,255,0.85) !important;
+    background: rgba(255,255,255,0.9) !important;
     color: #333 !important;
     border-radius: 12px !important;
-    border: 1px solid rgba(90,179,89,0.3) !important;
+    border: 1px solid rgba(212,84,140,0.3) !important;
 }
 
 /* 셀렉트 */
 .stSelectbox > div > div {
-    background: rgba(255,255,255,0.85) !important;
+    background: rgba(255,255,255,0.9) !important;
     border-radius: 12px !important;
 }
 
 /* 멀티셀렉트 */
 .stMultiSelect > div > div {
-    background: rgba(255,255,255,0.85) !important;
+    background: rgba(255,255,255,0.9) !important;
     border-radius: 12px !important;
 }
 
 /* 라벨 */
 label {
-    color: #3d5a30 !important;
+    color: #8b4a60 !important;
 }
 
 /* 제목 */
 h4 {
-    color: #2d5016 !important;
+    color: #d4548c !important;
     font-weight: 700 !important;
 }
 
@@ -181,13 +181,13 @@ h4 {
 hr {
     border: none;
     height: 1px;
-    background: rgba(90,179,89,0.2);
+    background: rgba(212,84,140,0.2);
 }
 
 /* 푸터 */
 .footer {
     text-align: center;
-    color: #4a6741;
+    color: #b0566f;
     padding: 1rem;
 }
 </style>""", unsafe_allow_html=True)
@@ -361,18 +361,18 @@ with tab_trig:
                 x_rad  = x_plot * np.pi
                 xlabel = "x (π)"
 
-            COLORS = {"sin": "#5ab359", "cos": "#2d8f50", "tan": "#3db86d"}
+            COLORS = {"sin": "#d4548c", "cos": "#c8428a", "tan": "#e07db8"}
             fig, ax = plt.subplots(figsize=(8, 4.4))
-            fig.patch.set_facecolor("#f5faf5")
-            ax.set_facecolor("#fafbfa")
+            fig.patch.set_facecolor("#fff5fa")
+            ax.set_facecolor("#fffbfd")
             for spine in ax.spines.values():
-                spine.set_edgecolor("#d0e5c8")
-            ax.tick_params(colors="#4a6741", labelsize=8.5)
-            ax.xaxis.label.set_color("#4a6741")
-            ax.yaxis.label.set_color("#4a6741")
-            ax.grid(color="#e8f0e6", linewidth=0.8, linestyle="--")
-            ax.axhline(0, color="#a8d5a8", linewidth=1.1)
-            ax.axvline(0, color="#a8d5a8", linewidth=1.1)
+                spine.set_edgecolor("#f0d5e8")
+            ax.tick_params(colors="#b0566f", labelsize=8.5)
+            ax.xaxis.label.set_color("#b0566f")
+            ax.yaxis.label.set_color("#b0566f")
+            ax.grid(color="#f5e8f0", linewidth=0.8, linestyle="--")
+            ax.axhline(0, color="#d4a8c8", linewidth=1.1)
+            ax.axvline(0, color="#d4a8c8", linewidth=1.1)
 
             for fname in funcs_selected:
                 arg = freq * x_rad + phase
@@ -390,8 +390,8 @@ with tab_trig:
                 ax.xaxis.set_major_formatter(ticker.FuncFormatter(lambda v, _: f"{v:.4g}π"))
             ax.set_xlabel(xlabel, fontsize=9)
             ax.set_ylabel("y", fontsize=9)
-            ax.legend(facecolor="#f0f5ed", edgecolor="#a8d5a8", labelcolor="#2d5016", fontsize=8.5)
-            ax.set_title("TRIGONOMETRY GRAPH", color="#2d5016", fontsize=10, pad=12,
+            ax.legend(facecolor="#f5eef2", edgecolor="#d4a8c8", labelcolor="#8b4a60", fontsize=8.5)
+            ax.set_title("TRIGONOMETRY GRAPH", color="#d4548c", fontsize=10, pad=12,
                          fontfamily="monospace", fontweight="bold")
             st.pyplot(fig, use_container_width=True)
             plt.close(fig)
