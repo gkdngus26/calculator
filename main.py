@@ -189,7 +189,8 @@ hr {
     text-align: center;
     color: #4a6741;
     padding: 1rem;
-}""")
+}
+</style>""", unsafe_allow_html=True)
 
 
 # ── 헬퍼 함수 ──────────────────────────────────
