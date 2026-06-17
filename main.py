@@ -19,23 +19,41 @@ html, body, [class*="css"] {
     font-family: 'Noto Sans KR', sans-serif;
 }
 
-/* 벚꽃 배경 */
+/* 벚꽃 배경 - 그라디언트로 대체 */
 .stApp {
-    background:
-        linear-gradient(
-            rgba(255,245,248,0.70),
-            rgba(255,248,250,0.75)
-        ),
-        url("https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=1920&q=80");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background: linear-gradient(
+        135deg,
+        #fff0f5 0%,
+        #ffd6e7 20%,
+        #ffb3d1 40%,
+        #ffc8e0 60%,
+        #ffe4f0 80%,
+        #fff5f8 100%
+    ) !important;
+    background-attachment: fixed !important;
+}
+
+/* 벚꽃 장식 오버레이 */
+.stApp::before {
+    content: "🌸  🌸  🌸  🌸  🌸  🌸  🌸  🌸  🌸  🌸";
+    position: fixed;
+    top: 8px;
+    left: 0;
+    width: 100%;
+    font-size: 1.4rem;
+    text-align: center;
+    letter-spacing: 0.5rem;
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 0;
 }
 
 /* 메인 영역 */
 .main .block-container {
     max-width: 820px;
     padding-top: 2rem;
+    position: relative;
+    z-index: 1;
 }
 
 /* 제목 */
@@ -63,8 +81,7 @@ html, body, [class*="css"] {
     background: rgba(255,255,255,0.55);
     border-radius: 18px;
     border: 1px solid rgba(255,255,255,0.35);
-    box-shadow:
-        0 8px 30px rgba(0,0,0,0.08);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
 }
 
 /* 결과 */
@@ -111,37 +128,25 @@ html, body, [class*="css"] {
 }
 
 .stTabs [aria-selected="true"] {
-    background: linear-gradient(
-        135deg,
-        #ffb7c9,
-        #f7a8c2
-    ) !important;
-
+    background: linear-gradient(135deg, #ffb7c9, #f7a8c2) !important;
     color: white !important;
 }
 
 /* 버튼 */
 div.stButton > button {
-    background: linear-gradient(
-        135deg,
-        #ffb7c9,
-        #f7a8c2
-    ) !important;
-
+    background: linear-gradient(135deg, #ffb7c9, #f7a8c2) !important;
     color: white !important;
     border: none !important;
     border-radius: 12px !important;
     padding: 0.7rem !important;
     font-weight: 600 !important;
-
-    box-shadow:
-        0 6px 20px rgba(247,168,194,0.35);
+    box-shadow: 0 6px 20px rgba(247,168,194,0.35);
+    transition: all 0.2s ease;
 }
 
 div.stButton > button:hover {
     transform: translateY(-2px);
-    box-shadow:
-        0 8px 24px rgba(247,168,194,0.45);
+    box-shadow: 0 8px 24px rgba(247,168,194,0.45);
 }
 
 /* 입력창 */
@@ -188,7 +193,8 @@ hr {
     text-align: center;
     color: #8d6b76;
     padding: 1rem;
-}""")
+}
+</style>""", unsafe_allow_html=True)
 
 
 # ── 헬퍼 함수 ──────────────────────────────────
