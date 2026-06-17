@@ -19,15 +19,15 @@ html, body, [class*="css"] {
     font-family: 'Noto Sans KR', sans-serif;
 }
 
-/* 원희 배경 - 선명하게 */
+/* 아일릿 원희 배경 - 선명하게 */
 .stApp {
     background:
         linear-gradient(
             135deg,
-            rgba(255,240,245,0.75),
-            rgba(245,235,250,0.75)
+            rgba(255,240,250,0.65),
+            rgba(240,235,255,0.65)
         ),
-        url("https://images.unsplash.com/photo-1534314784935-39a75ab50e8d?auto=format&fit=crop&w=1920&q=95");
+        url("https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2F7MAom%2FbtsQwg5CheW%2FAAAAAAAAAAAAAAAAAAAAAHhIj6R9CRzNRr88ZbKEDoRROUe03cn3XetNGmPXuOAQ%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1782831599%26allow_ip%3D%26allow_referer%3D%26signature%3De5JxhCIcFs51Ds5ekFlp%252BRQ%252FYQ4%253D");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -44,14 +44,14 @@ html, body, [class*="css"] {
     text-align: center;
     font-size: 2.6rem;
     font-weight: 700;
-    color: #d4548c;
+    color: #d946a6;
     margin-bottom: 0.2rem;
-    text-shadow: 0 2px 12px rgba(255,255,255,0.7);
+    text-shadow: 0 2px 12px rgba(255,255,255,0.8);
 }
 
 .calc-subtitle {
     text-align: center;
-    color: #b0566f;
+    color: #a855a8;
     margin-bottom: 2rem;
     font-size: 0.9rem;
 }
@@ -60,12 +60,12 @@ html, body, [class*="css"] {
 .result-display,
 .help-box,
 .error-display {
-    backdrop-filter: blur(8px);
-    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.88);
     border-radius: 16px;
-    border: 1px solid rgba(255,255,255,0.7);
+    border: 1px solid rgba(255,255,255,0.75);
     box-shadow:
-        0 8px 32px rgba(212,84,140,0.1);
+        0 8px 32px rgba(217,70,166,0.12);
 }
 
 /* 결과 */
@@ -75,12 +75,12 @@ html, body, [class*="css"] {
 }
 
 .result-expr {
-    color: #b0566f;
+    color: #a855a8;
     font-size: 0.85rem;
 }
 
 .result-value {
-    color: #d4548c;
+    color: #d946a6;
     font-size: 2.2rem;
     font-weight: 700;
 }
@@ -88,34 +88,34 @@ html, body, [class*="css"] {
 /* 도움말 */
 .help-box {
     padding: 1rem;
-    color: #8b4a60;
+    color: #9333a8;
     margin-bottom: 1rem;
 }
 
 /* 오류 */
 .error-display {
-    background: rgba(255,235,245,0.9);
-    color: #d94c6f;
+    background: rgba(255,240,245,0.92);
+    color: #d946a6;
     padding: 1rem;
 }
 
 /* 탭 */
 .stTabs [data-baseweb="tab-list"] {
-    background: rgba(255,255,255,0.70);
+    background: rgba(255,255,255,0.75);
     border-radius: 15px;
     padding: 6px;
 }
 
 .stTabs [data-baseweb="tab"] {
-    color: #b0566f !important;
+    color: #a855a8 !important;
     border-radius: 10px !important;
 }
 
 .stTabs [aria-selected="true"] {
     background: linear-gradient(
         135deg,
-        #d4548c,
-        #c8428a
+        #d946a6,
+        #c026d3
     ) !important;
 
     color: white !important;
@@ -125,8 +125,8 @@ html, body, [class*="css"] {
 div.stButton > button {
     background: linear-gradient(
         135deg,
-        #d4548c,
-        #c8428a
+        #d946a6,
+        #c026d3
     ) !important;
 
     color: white !important;
@@ -136,44 +136,44 @@ div.stButton > button {
     font-weight: 600 !important;
 
     box-shadow:
-        0 6px 20px rgba(212,84,140,0.3);
+        0 6px 20px rgba(217,70,166,0.35);
 }
 
 div.stButton > button:hover {
     transform: translateY(-2px);
     box-shadow:
-        0 8px 24px rgba(212,84,140,0.4);
+        0 8px 24px rgba(217,70,166,0.45);
 }
 
 /* 입력창 */
 .stNumberInput input,
 .stTextInput input {
-    background: rgba(255,255,255,0.9) !important;
+    background: rgba(255,255,255,0.92) !important;
     color: #333 !important;
     border-radius: 12px !important;
-    border: 1px solid rgba(212,84,140,0.3) !important;
+    border: 1px solid rgba(217,70,166,0.25) !important;
 }
 
 /* 셀렉트 */
 .stSelectbox > div > div {
-    background: rgba(255,255,255,0.9) !important;
+    background: rgba(255,255,255,0.92) !important;
     border-radius: 12px !important;
 }
 
 /* 멀티셀렉트 */
 .stMultiSelect > div > div {
-    background: rgba(255,255,255,0.9) !important;
+    background: rgba(255,255,255,0.92) !important;
     border-radius: 12px !important;
 }
 
 /* 라벨 */
 label {
-    color: #8b4a60 !important;
+    color: #9333a8 !important;
 }
 
 /* 제목 */
 h4 {
-    color: #d4548c !important;
+    color: #d946a6 !important;
     font-weight: 700 !important;
 }
 
@@ -181,13 +181,13 @@ h4 {
 hr {
     border: none;
     height: 1px;
-    background: rgba(212,84,140,0.2);
+    background: rgba(217,70,166,0.2);
 }
 
 /* 푸터 */
 .footer {
     text-align: center;
-    color: #b0566f;
+    color: #a855a8;
     padding: 1rem;
 }
 </style>""", unsafe_allow_html=True)
@@ -361,18 +361,18 @@ with tab_trig:
                 x_rad  = x_plot * np.pi
                 xlabel = "x (π)"
 
-            COLORS = {"sin": "#d4548c", "cos": "#c8428a", "tan": "#e07db8"}
+            COLORS = {"sin": "#d946a6", "cos": "#c026d3", "tan": "#e879f9"}
             fig, ax = plt.subplots(figsize=(8, 4.4))
-            fig.patch.set_facecolor("#fff5fa")
-            ax.set_facecolor("#fffbfd")
+            fig.patch.set_facecolor("#fff5fb")
+            ax.set_facecolor("#fffcfe")
             for spine in ax.spines.values():
-                spine.set_edgecolor("#f0d5e8")
-            ax.tick_params(colors="#b0566f", labelsize=8.5)
-            ax.xaxis.label.set_color("#b0566f")
-            ax.yaxis.label.set_color("#b0566f")
-            ax.grid(color="#f5e8f0", linewidth=0.8, linestyle="--")
-            ax.axhline(0, color="#d4a8c8", linewidth=1.1)
-            ax.axvline(0, color="#d4a8c8", linewidth=1.1)
+                spine.set_edgecolor("#f0d5ec")
+            ax.tick_params(colors="#a855a8", labelsize=8.5)
+            ax.xaxis.label.set_color("#a855a8")
+            ax.yaxis.label.set_color("#a855a8")
+            ax.grid(color="#f7ecf5", linewidth=0.8, linestyle="--")
+            ax.axhline(0, color="#d8b5d8", linewidth=1.1)
+            ax.axvline(0, color="#d8b5d8", linewidth=1.1)
 
             for fname in funcs_selected:
                 arg = freq * x_rad + phase
@@ -390,8 +390,8 @@ with tab_trig:
                 ax.xaxis.set_major_formatter(ticker.FuncFormatter(lambda v, _: f"{v:.4g}π"))
             ax.set_xlabel(xlabel, fontsize=9)
             ax.set_ylabel("y", fontsize=9)
-            ax.legend(facecolor="#f5eef2", edgecolor="#d4a8c8", labelcolor="#8b4a60", fontsize=8.5)
-            ax.set_title("TRIGONOMETRY GRAPH", color="#d4548c", fontsize=10, pad=12,
+            ax.legend(facecolor="#f7f0f5", edgecolor="#d8b5d8", labelcolor="#9333a8", fontsize=8.5)
+            ax.set_title("TRIGONOMETRY GRAPH", color="#d946a6", fontsize=10, pad=12,
                          fontfamily="monospace", fontweight="bold")
             st.pyplot(fig, use_container_width=True)
             plt.close(fig)
